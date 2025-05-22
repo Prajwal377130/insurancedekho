@@ -1,0 +1,46 @@
+.navbar {
+  background: #fff;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.nav-item {
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 1000px;
+  display: flex;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.column {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.category-item,
+.sub-link,
+.company-item {
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.category-item:hover,
+.sub-link:hover,
+.company-item:hover {
+  color: #007bff;
+}
+
+.category-item.active {
+  font-weight: bold;
+  color: #007bff;
+}

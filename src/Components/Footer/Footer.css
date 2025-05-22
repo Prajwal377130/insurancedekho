@@ -1,0 +1,83 @@
+.footer {
+  background: #f9f9f9;
+  padding: 40px 20px;
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+}
+
+.footer-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-left {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-logo img {
+  width: 160px;
+  margin-bottom: 10px;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  display: flex;
+  flex: 3;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-links div {
+  min-width: 160px;
+}
+
+.footer-links h4 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.footer-links li:hover {
+  color: #007bff;
+}
+
+.footer-right {
+  flex: 1;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-stat {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.stat-icon {
+  font-size: 24px;
+  color: #007bff;
+}

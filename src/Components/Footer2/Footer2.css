@@ -1,0 +1,48 @@
+.quick-links-wrapper {
+  padding: 40px;
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.quick-links-heading {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.quick-links-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.quick-links-card {
+  flex: 1 1 220px;
+}
+
+.quick-links-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #141618;
+}
+
+.quick-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quick-links-item {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.quick-links-item:hover {
+  color: #007bff;
+}

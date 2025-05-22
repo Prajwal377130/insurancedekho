@@ -1,0 +1,25 @@
+.banner-slider-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 250px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 12px;
+margin-top: -10px;
+}
+
+.banner-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 100%;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.banner-slide.active {
+  left: 0;
+  opacity: 1;
+}

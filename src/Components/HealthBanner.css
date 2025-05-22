@@ -1,0 +1,58 @@
+.health-banner {
+  background-color: #c5d3ee;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px  100px auto;
+  cursor : pointer;
+}
+
+.health-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 15px ;
+  text-align: left;
+}
+
+.health-banner-left img {
+  width: 80px;
+  height: 80px;
+}
+
+.health-banner-left h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.highlight {
+  color: rgb(112, 112, 199);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.book-btn {
+  background-color:white;
+  color:red;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.book-btn:hover {
+  background-color: #d62828;
+}
+
+@media (min-width: 768px) {
+  .health-banner {
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,118 @@
+.advisor-container {
+  display: flex;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  gap: 20px;
+}
+
+.advisor-filters {
+  width: 200px;
+  border-right: 1px solid #ddd;
+  padding-right: 10px;
+}
+
+.filter-section h4 {
+  margin-bottom: 8px;
+}
+
+.city-option {
+  display: block;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.advisor-content {
+  flex: 1;
+}
+
+.advisor-highlight {
+  display: flex;
+  background-color: #eef8f1;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 15px 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.highlight-left ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.highlight-left li {
+  margin-bottom: 5px;
+}
+
+.book-link {
+  color: red;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.advisor-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.advisor-card {
+  border: 1px solid #ccc;
+
+  padding: 15px;
+  width: 100%;
+  text-align:left;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  background-color: #fff;
+}
+
+.advisor-card img {
+  
+  width: 100px;
+  height: 100px;
+}
+
+.book-btn {
+  padding: 10px 16px;
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+  background-color: #c2185b;
+}
+
+
+.advisor-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-image img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+

@@ -1,0 +1,39 @@
+.footer-legal-wrapper {
+  background-color: #f1f1f1;
+  font-size: 13px;
+  color: #555;
+  padding: 30px 20px 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-legal-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-legal-left {
+  flex: 2;
+  min-width: 300px;
+}
+
+.footer-legal-right {
+  flex: 1;
+  min-width: 250px;
+  color: #333;
+}
+
+.footer-legal-right p {
+  margin: 4px 0;
+  font-weight: 500;
+}
+
+.footer-legal-bottom {
+  text-align: center;
+  margin-top: 25px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  font-size: 12px;
+  color: #777;
+}

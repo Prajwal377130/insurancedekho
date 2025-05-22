@@ -1,0 +1,42 @@
+.how-it-works-wrapper {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #ffffff;
+}
+
+.how-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.how-steps {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.how-step {
+  max-width: 280px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: #f4f6f8;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.how-step img {
+  margin-bottom: 1rem;
+}
+
+.how-step h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.how-step p {
+  font-size: 0.95rem;
+  color: #555;
+}
