@@ -60,8 +60,8 @@ function LoginSignUp() {
           {!isLogin && formData.role === 'user' && (
             <input
               type="text"
-              name="name"
-              placeholder="Name"
+              name="panNumber"
+              placeholder="Pan Number"
               value={formData.name}
               onChange={handleChange}
               required

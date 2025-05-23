@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-
+import CustomerSpeak from '../../../Components/CusotmerSpeak.js/CustomerSpeak';
+import Footer from '../../../Components/Footer/Footer.js'
+import Footer2 from '../../../Components/Footer2/Footer2.js'
+import Footer3 from '../../../Components/Footer3/Footer3.js'
 import BikePlans from './BikePlans';
 import './Bike.css';
 
@@ -14,26 +17,19 @@ const loadRazorpayScript = () =>
   });
 
 const brandModels = {
-  AUDI: ['A3', 'A4', 'A5', 'A6', 'Q3', 'Q5'],
-  MARUTI: ['Alto', 'Baleno', 'Swift', 'Brezza','Ciaz'],
-  Honda: ['City', 'Amaze', 'Jazz','BR-V','Civic'],
-  TATA: ['Nexon', 'Harrier', 'Tiago','Nano','Zest'],
-  TOYOTA: ['Fortuner', 'Innova', 'Glanza','Etios','Yaris'],
-  RENAULT: ['Kwid', 'Triber', 'Duster','Scala','Pulse'],
-  FORD: ['EcoSport', 'Figo', 'Endeavour','Figo','Fusion'],
-  KIA: ['Seltos', 'Sonet', 'Carens','Seltos','Cranival'],
-  BMW: ['X1', 'X3', 'X5',],
-  MG: ['Hector', 'Astor', 'Gloster','Astor','Hector Plus'],
-  SKODA: ['Rapid', 'Octavia', 'Superb','Fabia','Laura'],
-  NISSAN: ['Magnite', 'Kicks', 'Sunny','X-Trail','Sunny'],
-  HYUNDAI: ['i10', 'i20', 'Creta', 'Verna','Xcent'],
-  MAHINDRA: ['XUV300', 'XUV700', 'Scorpio','Xylo','Mara200'],
+  Honda: ["Activa", "Shine","Activa5G"],
+  Hero: ["Splendor Plus","Glamour","HF Deluxe","Splendor Pro"],
+  TVS: ["NTORQ125","Sport","Xl 100","Victor"],
+  Bajaj: ["Pulsar150","Platina","CT100"],
+  Yamaha: ["Royal Z","R15s","Alpha","FZ2s"],
+  Suzuki: ["Zeus","Hayate","Intruder","Access125"],
+
 };
 
 const BikeInsurance = () => {
   
-  const [carNumber, setCarNumber] = useState('');
-  const [carBrand, setCarBrand] = useState('');
+  const [bikeNumber, setBikeNumber] = useState('');
+  const [bikeBrand, setBikeBrand] = useState('');
   const [model, setModel] = useState('');
   const [fuel, setFuel] = useState('');
   const [city, setCity] = useState('');
@@ -43,7 +39,7 @@ const BikeInsurance = () => {
   const fetchPolicies = async () => {
   try {
     const res = await fetch(
-      `http://localhost:4000/api/car-insurance/getall`
+      `http://localhost:4000/api/bike-insurance/getall`
     );
     const data = await res.json();
     setPolicies(data);
@@ -54,14 +50,14 @@ const BikeInsurance = () => {
 
 
   const handleCalculatePrice = async () => {
-    const carNumberRegex = /^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$/;
+    const bikeNumberRegex = /^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$/;
 
-    if (!carNumberRegex.test(carNumber)) {
+    if (!bikeNumberRegex.test(bikeNumber)) {
       alert('Please enter a valid car number (e.g., DL01AB1234)');
       return;
     }
 
-    if (!carBrand || !model || !fuel || !city || !year) {
+    if (!bikeBrand || !model || !fuel || !city || !year) {
       alert('Please fill all fields');
       return;
     }
@@ -80,7 +76,7 @@ const BikeInsurance = () => {
       const res = await fetch('http://localhost:4000/api/payment/create-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount: policy.premium * 100 }),
+        body: JSON.stringify({ amount: policy.Amount * 1 }),
       });
 
       const order = await res.json();
@@ -89,12 +85,12 @@ const BikeInsurance = () => {
         key: 'rzp_test_8OxcE1UBYZJ2Nl', 
         amount: order.amount,
         currency: order.currency,
-        name: 'Car Insurance',
+        name: 'Bike Insurance',
         description: policy.policyName,
         order_id: order.id,
         handler: function (response) {
           alert(`Payment successful for ${policy.policyName}`);
-          console.log('Car Details:', { carNumber, carBrand, model, fuel, city, year });
+          console.log('Bike Details:', { bikeNumber, bikeBrand, model, fuel, city, year });
           console.log('Razorpay Response:', response);
         },
         prefill: {
@@ -114,28 +110,28 @@ const BikeInsurance = () => {
 
   return (
     <>
-     <h2>Calculate Your Car Insurance Price Online</h2>
+     <h2>Calculate Your Bike Insurance Price Online</h2>
     <div className="main-card">
      
 
       <div className="form-grid">
         <div>
-          <label>Car Number</label>
+          <label>Bike Number</label>
           <input
             type="text"
-            value={carNumber}
-            onChange={(e) => setCarNumber(e.target.value.toUpperCase())}
+            value={bikeNumber}
+            onChange={(e) => setBikeNumber(e.target.value.toUpperCase())}
             placeholder="e.g. DL01AB1234"
             maxLength={10}
           />
         </div>
 
         <div>
-          <label>Car Brand</label>
+          <label>Bike Brand</label>
           <select
-            value={carBrand}
+            value={bikeBrand}
             onChange={(e) => {
-              setCarBrand(e.target.value);
+              setBikeBrand(e.target.value);
               setModel(''); 
             }}
           >
@@ -152,7 +148,7 @@ const BikeInsurance = () => {
           <label>Model</label>
           <select value={model} onChange={(e) => setModel(e.target.value)}>
             <option value="">Select Model</option>
-            {brandModels[carBrand]?.map((m) => (
+            {brandModels[bikeBrand]?.map((m) => (
               <option key={m} value={m}>
                 {m}
               </option>
@@ -165,7 +161,7 @@ const BikeInsurance = () => {
           <select value={fuel} onChange={(e) => setFuel(e.target.value)}>
             <option value="">Select Fuel</option>
             <option value="Petrol">Petrol</option>
-            <option value="Diesel">Diesel</option>
+            <option value="Electric">Electric</option>
           </select>
         </div>
 
@@ -206,13 +202,8 @@ const BikeInsurance = () => {
           <h3>Available Plans:</h3>
           {policies.map((p, i) => (
             <div key={i} className="policy-item">
-              <p><strong>Car Number:</strong> {p.carNumber}</p>
-              <p><strong>City:</strong> {p.city}</p>
-              <p><strong>Model:</strong> ₹{p.model}</p>
-              <p><strong>Fuel:</strong> ₹{p.fuel}</p>
               <p><strong>Plan:</strong> {p.policyName}</p>
               <p><strong>Insurer:</strong> {p.insurer}</p>
-              <p><strong>Brand:</strong> ₹{p.brand}</p>
               <p><strong>Amount:</strong> ₹{p.Amount}</p>
               <button onClick={() => handleBuyNow(p)}>Buy Now</button>
             </div>
@@ -221,30 +212,27 @@ const BikeInsurance = () => {
       )}
     </div>
   <p className="info-paragraph">
-    <h3 style={{textAlign:"center"}}> What is Car Insurance?</h3>
-    <p>
-Once you’ve secured the car of your dreams, the next step is to get car insurance from a reliable provider. Think of it as a safety net for your beloved ride and the loved ones who will use it. Car insurance, also called four wheeler insurance, is a contract between an insurer and you, the policyholder to protect you from unpredictable circumstances like accidents, theft or natural calamities. In India, car owners have the choice between three types of four-wheeler insurance, namely Standalone own-damage insurance, Third-party insurance, and Comprehensive coverage.
-</p>
-<p>
-According to the Motor Vehicles Act of 1988, every car owner must have at least a third-party insurance policy. This provides coverage in case you are ever involved in an accident causing physical or property damage. You could also choose to level up and opt for comprehensive insurance plans which will provide coverage in case of theft, damage via natural causes, or mechanical issues.
-</p>
-<p>
-Today, getting car insurance or renewing an existing 4-wheeler policy has never been easier. One can find multiple policy options online for a variety of price ranges, but at InsuranaceDekho, we believe in helping you stay protected without breaking the bank. Choose from the policy options below, or talk to us to find the four-wheeler policy that best fits your needs.
-    </p>
+    <h3 style={{textAlign:"center"}}> What Is Bike Insurance?</h3>
+If you own a bike, you know its value: the thrill of adventure, fun rides with the family, and the convenience of travelling in the local area. Indian households very quickly become attached to their bikes, and to ensure these sentiments are protected, getting bike insurance is very important. Bike Insurance protects your vehicle from the potential risk of damage and ensures that your bike continues to provide memories even after a setback.
     </p>
  
 <BikePlans/>
 <p    className="info-paragraph">
-    <h3 style={{textAlign:"center"}}> Key Features of a Car Insurance Policy</h3>
+    <h3 style={{textAlign:"center"}}> Why Do You Need Bike Insurance?</h3>
   
 <p style={{textAlign:"center"}}>Here are some of the key benefits of having a car insurance policy:</p>
 
-<p style={{fontSize:"12px"}}>Financial Protection Against Damages: Covers repair and replacement costs when your car is damaged due to accidents, theft, fire, vandalism, or natural calamities, reducing your out-of-pocket expenses.</p>
-<p style={{fontSize:"12px"}}>Third-Party Liability Coverage: Legally required to drive in India, it protects you from financial and legal obligations if your car injures someone, damages their vehicle or their property.</p>
-<p style={{fontSize:"12px"}}>Personal Accident Cover: Provides financial support if the owner-driver faces injury, disability, or death due to an accident, helping cover medical bills and loss of income.</p>
-<p style={{fontSize:"12px"}}>No Claim Bonus (NCB): Helps reduce your cost of renewal for having no claims made during the policy term, helping you save money over time.</p>
-<p style={{fontSize:"12px"}}>Cashless Repairs at Partner Garages: Allows you to get your car repaired at network garages without paying upfront, with the insurer settling costs directly with the repair centre.</p>
+<p style={{fontSize:"12px"}}>Legal Requirement - In India, having at least a third-party liability cover is mandatory to legally ride on the roads. Failure to comply can lead to fines or even license suspension.</p>
+<p style={{fontSize:"12px"}}>Financial Security - Bike insurance protects you from the financial burden of repairing damages to your vehicle or another party’s, especially in accidents..</p>
+<p style={{fontSize:"12px"}}>Protection Against Theft - If your bike is stolen, comprehensive coverage can compensate you for the loss, mitigating out-of-pocket expenses.</p>
+<p style={{fontSize:"12px"}}>Personal Accident Cover - Most bike insurance policies include personal accident coverage, providing financial support for medical treatment in case of injuries sustained due to an accident.
 </p>
+<p style={{fontSize:"12px"}}>Third-Party Liability - If your bike is involved in an accident causing damage or injury to someone else, third-party liability coverage pays for their expenses or legal claims, reducing your financial risk.</p>
+</p>
+<CustomerSpeak/>
+<Footer/>
+<Footer2/>
+<Footer3/>
   </>
 );
 };

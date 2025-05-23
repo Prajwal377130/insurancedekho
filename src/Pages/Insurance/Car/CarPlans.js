@@ -86,7 +86,7 @@ const CarPlans = () => {
       </div>
     </div>
     <div className="price-section">
-      <p>Starting From <strong>₹2396</strong></p>
+      <p>Starting From <strong>₹5000</strong></p>
       <button className="check-btn">Check Prices</button>
     </div>
   </div>
@@ -125,7 +125,7 @@ const CarPlans = () => {
       </div>
     </div>
     <div className="price-section">
-      <p>Starting From <strong>₹1000</strong></p>
+      <p>Starting From <strong>₹30000</strong></p>
       <button className="check-btn">Check Prices</button>
     </div>
   </div>
@@ -164,7 +164,7 @@ const CarPlans = () => {
       </div>
     </div>
     <div className="price-section">
-      <p>Starting From <strong>₹2494</strong></p>
+      <p>Starting From <strong>₹35000</strong></p>
       <button className="check-btn">Check Prices</button>
     </div>
   </div>
@@ -203,7 +203,7 @@ const CarPlans = () => {
       </div>
     </div>
     <div className="price-section">
-      <p>Starting From <strong>₹3151</strong></p>
+      <p>Starting From <strong>₹50000</strong></p>
       <button className="check-btn">Check Prices</button>
     </div>
   </div>

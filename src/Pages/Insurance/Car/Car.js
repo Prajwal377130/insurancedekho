@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-
+import CustomerSpeak from '../../../Components/CusotmerSpeak.js/CustomerSpeak';
+import Footer from '../../../Components/Footer/Footer.js'
+import Footer2 from '../../../Components/Footer2/Footer2.js'
+import Footer3 from '../../../Components/Footer3/Footer3.js'
 import CarPlans from './CarPlans';
 import './Car.css';
 
@@ -80,13 +83,13 @@ const CarInsurance = () => {
       const res = await fetch('http://localhost:4000/api/payment/create-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount: policy.premium * 100 }),
+        body: JSON.stringify({ amount: policy.Amount * 1 }),
       });
 
       const order = await res.json();
 
       const options = {
-        key: 'rzp_test_8OxcE1UBYZJ2Nl', // Replace with your actual Razorpay key
+        key: 'rzp_test_8OxcE1UBYZJ2Nl', 
         amount: order.amount,
         currency: order.currency,
         name: 'Car Insurance',
@@ -98,9 +101,9 @@ const CarInsurance = () => {
           console.log('Razorpay Response:', response);
         },
         prefill: {
-          name: 'Customer Name',
-          email: 'customer@example.com',
-          contact: '9999999999',
+          name: 'Pimmud',
+          email: 'pimmud@gmail.com',
+          contact: '9632908110',
         },
         theme: { color: '#f63b77' },
       };
@@ -206,13 +209,8 @@ const CarInsurance = () => {
           <h3>Available Plans:</h3>
           {policies.map((p, i) => (
             <div key={i} className="policy-item">
-              <p><strong>Car Number:</strong> {p.carNumber}</p>
-              <p><strong>City:</strong> {p.city}</p>
-              <p><strong>Model:</strong> ₹{p.model}</p>
-              <p><strong>Fuel:</strong> ₹{p.fuel}</p>
               <p><strong>Plan:</strong> {p.policyName}</p>
               <p><strong>Insurer:</strong> {p.insurer}</p>
-              <p><strong>Brand:</strong> ₹{p.brand}</p>
               <p><strong>Amount:</strong> ₹{p.Amount}</p>
               <button onClick={() => handleBuyNow(p)}>Buy Now</button>
             </div>
@@ -245,6 +243,10 @@ Today, getting car insurance or renewing an existing 4-wheeler policy has never 
 <p style={{fontSize:"12px"}}>No Claim Bonus (NCB): Helps reduce your cost of renewal for having no claims made during the policy term, helping you save money over time.</p>
 <p style={{fontSize:"12px"}}>Cashless Repairs at Partner Garages: Allows you to get your car repaired at network garages without paying upfront, with the insurer settling costs directly with the repair centre.</p>
 </p>
+<CustomerSpeak/>
+<Footer/>
+<Footer2/>
+<Footer3/>
   </>
 );
 };

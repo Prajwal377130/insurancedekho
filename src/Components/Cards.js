@@ -66,54 +66,7 @@ const insuranceOptions = [
     subtitle: "Plans",
     path: "/investment"
   },
-  {
-    label: "Business",
-    icon: (
-      <img
-        src="https://www.insurancedekho.com/pwa/img/business_insurance.svg"
-        alt="Business Icon"
-        style={{ width: "40px", height: "40px" }}
-      />
-    ),
-    subtitle: "Plans",
-    path: "/business"
-  },
-  {
-    label: "Family Health",
-    icon: (
-      <img
-        src="https://www.insurancedekho.com/pwa/img/v2_icon_family.svg"
-        alt="Family Health Icon"
-        style={{ width: "40px", height: "40px" }}
-      />
-    ),
-    subtitle: "Plans",
-    path: "/familyHealth"
-  },
-  {
-    label: "Guaranteed",
-    icon: (
-      <img
-        src="https://www.insurancedekho.com/pwa/img/v2_icon_guaranteeReturn.svg"
-        alt="Guaranteed Icon"
-        style={{ width: "40px", height: "40px" }}
-      />
-    ),
-    subtitle: "Plans",
-    path: "/guaranteed"
-  },
-  {
-    label: "View More",
-    icon: (
-      <img
-        src="https://static.insurancedekho.com/pwa/img/v2_icon_viewmore.svg"
-        alt="View More Icon"
-        style={{ width: "40px", height: "40px" }}
-      />
-    ),
-    subtitle: "Options",
-    path: "/viewMore"
-  }
+
 ];
 
 function Cards() {

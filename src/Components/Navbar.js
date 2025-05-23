@@ -56,18 +56,7 @@ function Navbar() {
         "New India Bike Insurance", "Royal SUndaram Bike Insurance","Kotak Bike Insurance"
       ],
     },
-    'Life Insurance': {
-      subLinks: [
-        { label: 'Life Insurance Companies', link: '/LifeInsuranceCompany' },
-        { label: 'Life Insurance Plans', link: '/Life-Insurance-Plans' },
-         { label: 'Postal Life Insurance', link: '/Postal-Life-Insurance' },
-        { label: 'Term Insurance vs Life Insurance', link: '/Term-Life' },
-        { label: 'Life Insurance Quotes', link: '/Quotes' },
-      ],
-      companies: ['Axis Max Life Insurance', 'Tata AIA  Life Insuranc', 'HDFC Life  Life Insuranc', 'PNB MetLife Insurance',
-        "ICICI Prudential Insurance"
-      ],
-    },
+    
     'Term Insurance': {
         subLinks: [
         { label: 'Term Insurance Companies', link: '/TermInsuranceCompany' },
@@ -93,20 +82,8 @@ function Navbar() {
         "ICICI Prudential Investment",
       ],
     },
-    'Business Insurance': {
-      subLinks: [
-        { label: 'Plans ', link: '/Plans' },
-        
-      ],
-      
-    },
-    'Travel Insurance': {
-        subLinks: [
-        { label: ' Travel Isurance Companies', link: '/Travel-Company' },
-        { label: ' Travel To Country', link: '/Travel-to-country' },
-         { label: 'Types of Travel Insurance', link: '/Types' },
-        ],
-      }
+    
+    
   };
 
   const handleCategoryHover = (category) => {

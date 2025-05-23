@@ -6,24 +6,24 @@ export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState(() => {
     const token = localStorage.getItem('token');
     const role = localStorage.getItem('role');
-    const name = localStorage.getItem('name');
+    const panNumber = localStorage.getItem('panNumber');
     const email = localStorage.getItem('email');
     const id = localStorage.getItem('id'); 
-    return { token, role, name, email, id};
+    return { token, role, panNumber, email, id};
   });
 
-  const login = ({ token, role, name, email, id }) => {
+  const login = ({ token, role, panNumber, email, id }) => {
     localStorage.setItem('token', token);
     localStorage.setItem('role', role);
-    localStorage.setItem('name', name);
+    localStorage.setItem('panNumber', panNumber);
     localStorage.setItem('email', email);
     localStorage.setItem('id', id); 
-    setAuth({ token, role, name, email, id });
+    setAuth({ token, role, panNumber, email, id });
   };
 
   const logout = () => {
     localStorage.clear();
-    setAuth({ token: null, role: null, name: null, email: null ,id:null});
+    setAuth({ token: null, role: null, panNumber: null, email: null ,id:null});
   };
 
   return (

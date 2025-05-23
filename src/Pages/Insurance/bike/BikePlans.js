@@ -6,7 +6,7 @@ const BikePlans = () => {
   return (
     <div>
       <div className="tabs-section">
-  <h3>Top Car Insurance Plans</h3>
+  <h3>Top Bike Insurance Plans</h3>
   <div className="tabs">
     <button className="tab active">Comprehensive</button>
     <button className="tab active">Third Party</button>
@@ -21,7 +21,7 @@ const BikePlans = () => {
       className="insurer-logo"
       style={{ width: "50px", marginBottom: "10px" }}
     />
-    <h6 style={{ margin: 0 }}>Hdfc Ergo Car Insurance</h6>
+    <h6 style={{ margin: 0 }}>Hdfc Ergo Bike Insurance</h6>
   </div>
     <div className="plan-details">
       <div style={{display:"flex" , gap:"30px", flexWrap:"wrap", marginBottom:"15px",fontSize:"12px"}}>
@@ -60,7 +60,7 @@ const BikePlans = () => {
       className="insurer-logo"
       style={{ width: "100px", marginBottom: "10px" }}
     />
-    <h6 style={{ margin: 0 }}>United India Car Insurance</h6>
+    <h6 style={{ margin: 0 }}>United India Bike Insurance</h6>
   </div>
     <div className="plan-details">
       <div style={{display:"flex" , gap:"30px", flexWrap:"wrap", marginBottom:"15px",fontSize:"12px"}}>
@@ -99,7 +99,7 @@ const BikePlans = () => {
       className="insurer-logo"
       style={{ width: "100px", marginBottom: "10px" }}
     />
-    <h6 style={{ margin: 0 }}>Icici Lombard Car Insurance</h6>
+    <h6 style={{ margin: 0 }}>Icici Lombard Bike Insurance</h6>
   </div>
     <div className="plan-details">
       <div style={{display:"flex" , gap:"30px", flexWrap:"wrap", marginBottom:"15px",fontSize:"12px"}}>
@@ -138,7 +138,7 @@ const BikePlans = () => {
       className="insurer-logo"
       style={{ width: "100px", marginBottom: "10px" }}
     />
-    <h6 style={{ margin: 0 }}>New India Car Insurance</h6>
+    <h6 style={{ margin: 0 }}>New India Bike Insurance</h6>
   </div>
     <div className="plan-details">
       <div style={{display:"flex" , gap:"30px", flexWrap:"wrap", marginBottom:"15px",fontSize:"12px"}}>
@@ -177,7 +177,7 @@ const BikePlans = () => {
       className="insurer-logo"
       style={{ width: "100px", marginBottom: "10px" }}
     />
-    <h6 style={{ margin: 0 }}>Royal Sundaram Car Insurance</h6>
+    <h6 style={{ margin: 0 }}>Royal Sundaram Bike Insurance</h6>
   </div>
     <div className="plan-details">
       <div style={{display:"flex" , gap:"30px", flexWrap:"wrap", marginBottom:"15px",fontSize:"12px"}}>

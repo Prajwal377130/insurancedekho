@@ -4,9 +4,9 @@ import Layout from './Layout.js';
 import Home from './Pages/Home.js';
 import Car from './Pages/Insurance/Car/Car.js'
 import Bike from './Pages/Insurance/bike/Bike.js'
-import Term from './Pages/Insurance/Term.js'; 
+import Term from './Pages/Insurance/Term/Term.js'; 
 
-import Investment from './Pages/Insurance/Investment.js';
+import Investment from './Pages/Insurance/Investment/Investment.js';
 import AdvisorInBengalore from './Pages/InsuranceAdvisors/AdvisorInBengalore.js';
 import AdvisorInChennai from './Pages/InsuranceAdvisors/AdvisorInChennai.js';
 import AdvisorInKolkatta from './Pages/InsuranceAdvisors/AdvisorInKolkatta.js';
@@ -25,7 +25,7 @@ import AdminDashboard from './Pages/AdminDashboard.js';
 import HealthBanner from './Components/HealthBanner'
 import BookHomeVisit from './Components/BookHomeVisit'
 import TermBannerPage from './Components/TermBannerPage'
-import Health from './Pages/Insurance/Health.js'
+import Health from './Pages/Insurance/Health/Health.js'
 
 
 function App() {
